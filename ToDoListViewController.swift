@@ -37,7 +37,8 @@ class ToDoListViewController: UIViewController, UITableViewDataSource, AddItemVi
       // MARK: AddItemViewControllerProtocol
 
       func addItem(item:String){
-        print("addItem() inside TodoViewController")
+        print("addItem() inside TodoViewController item:")
+        print(item)
         // Add the new item to our array of items
         self.items.insertObject(item, atIndex: 0)
 
