@@ -14,6 +14,8 @@ class ToDoListViewController: UIViewController, UITableViewDataSource, AddItemVi
 
     var items = NSMutableArray()
     let cellIdentifier = "CellIdentifier"
+    let cacheKey = "cacheKey"
+    var cache: CacheProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +32,6 @@ class ToDoListViewController: UIViewController, UITableViewDataSource, AddItemVi
 
     }
 
-
-    override func setEditing(editing: Bool, animated: Bool){
-        print("Editting a button")
-        super.setEditing(editing, animated: animated)
-       self.tableView?.setEditing(editing, animated: animated)
-       self.navigationItem.rightBarButtonItem?.enabled = !editing
-    }
       // MARK: AddItemViewControllerProtocol
 
       func addItem(item:String){
@@ -77,6 +72,8 @@ class ToDoListViewController: UIViewController, UITableViewDataSource, AddItemVi
         if editingStyle == UITableViewCellEditingStyle.Delete {
           self.items.removeObjectAtIndex(indexPath.row)
           self.tableView?.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+          // save the editing
+          self.save()
         }
       }
 
@@ -93,11 +90,26 @@ class ToDoListViewController: UIViewController, UITableViewDataSource, AddItemVi
 
         }
 
+        override func setEditing(editing: Bool, animated: Bool){
+            print("Editting a button")
+            super.setEditing(editing, animated: animated)
+           self.tableView?.setEditing(editing, animated: animated)
+           self.navigationItem.rightBarButtonItem?.enabled = !editing
+        }
 
-    /*
-    // MARK: - Navigation
 
-\
-    */
+        // MARK: Data Manipulation Cache Actions
+        func load(){
+          print("Hello TodoList.load() World")
+          let object = self.cache?.loadObjectForKey(cacheKey)
+          if let items = object as? NSArray{
+            self.items = NSMutableArray(array: items)
+          }
+        }
+
+        func save(){
+          print("Hello TodoList.save() World")
+          self.cache?.saveObject(self.items, key: cacheKey)
+        }
 
 }
