@@ -10,6 +10,10 @@
 		5351FED21C6B583F00C04288 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5351FED11C6B583F00C04288 /* AppDelegate.swift */; };
 		5351FED91C6B583F00C04288 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5351FED81C6B583F00C04288 /* Assets.xcassets */; };
 		5351FEDC1C6B583F00C04288 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5351FEDA1C6B583F00C04288 /* LaunchScreen.storyboard */; };
+		535B2BF71C785B1B00D23A7B /* ToDoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 535B2BF51C785B1B00D23A7B /* ToDoListViewController.xib */; };
+		53CD9B9D1C8CD076000F4013 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CD9B9B1C8CD076000F4013 /* AddItemViewController.swift */; };
+		53CD9B9E1C8CD076000F4013 /* AddItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53CD9B9C1C8CD076000F4013 /* AddItemViewController.xib */; };
+		53CD9B9F1C8CD2E3000F4013 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535B2BF41C785B1B00D23A7B /* ToDoListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +22,10 @@
 		5351FED81C6B583F00C04288 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5351FEDB1C6B583F00C04288 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5351FEDD1C6B583F00C04288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		535B2BF41C785B1B00D23A7B /* ToDoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToDoListViewController.swift; path = ../ToDoListViewController.swift; sourceTree = "<group>"; };
+		535B2BF51C785B1B00D23A7B /* ToDoListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ToDoListViewController.xib; path = ../ToDoListViewController.xib; sourceTree = "<group>"; };
+		53CD9B9B1C8CD076000F4013 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddItemViewController.swift; path = "/Users/johnq/Desktop/tutorials/onemonth-ios/TodoApp/TodoApp/AddItemViewController.swift"; sourceTree = "<absolute>"; };
+		53CD9B9C1C8CD076000F4013 /* AddItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddItemViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +58,11 @@
 		5351FED01C6B583F00C04288 /* TodoApp */ = {
 			isa = PBXGroup;
 			children = (
+				535B2BF51C785B1B00D23A7B /* ToDoListViewController.xib */,
+				535B2BF41C785B1B00D23A7B /* ToDoListViewController.swift */,
 				5351FED11C6B583F00C04288 /* AppDelegate.swift */,
+				53CD9B9B1C8CD076000F4013 /* AddItemViewController.swift */,
+				53CD9B9C1C8CD076000F4013 /* AddItemViewController.xib */,
 				5351FED81C6B583F00C04288 /* Assets.xcassets */,
 				5351FEDA1C6B583F00C04288 /* LaunchScreen.storyboard */,
 				5351FEDD1C6B583F00C04288 /* Info.plist */,
@@ -117,7 +129,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5351FEDC1C6B583F00C04288 /* LaunchScreen.storyboard in Resources */,
+				53CD9B9E1C8CD076000F4013 /* AddItemViewController.xib in Resources */,
 				5351FED91C6B583F00C04288 /* Assets.xcassets in Resources */,
+				535B2BF71C785B1B00D23A7B /* ToDoListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +143,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5351FED21C6B583F00C04288 /* AppDelegate.swift in Sources */,
+				53CD9B9F1C8CD2E3000F4013 /* ToDoListViewController.swift in Sources */,
+				53CD9B9D1C8CD076000F4013 /* AddItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +284,7 @@
 				5351FEE21C6B583F00C04288 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
