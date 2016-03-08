@@ -20,8 +20,8 @@ class ToDoListViewController: UIViewController, UITableViewDataSource, AddItemVi
         // Do any additional setup after loading the view.
 
         self.title = "XOGO TODO LIST"
-        self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action:"didTapAdd:")
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action:"didTapAdd:")
         self.tableView?.dataSource = self
         self.tableView?.registerClass(UITableViewCell.self, forCellReuseIdentifier:self.cellIdentifier)
         // self.items.addObject("Hector")
