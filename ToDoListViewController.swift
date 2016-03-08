@@ -33,6 +33,9 @@ class ToDoListViewController: UIViewController, UITableViewDataSource, AddItemVi
 
     override func setEditing(editing: Bool, animated: Bool){
         print("Editting a button")
+        super.setEditing(editing, animated: animated)
+       self.tableView?.setEditing(editing, animated: animated)
+       self.navigationItem.rightBarButtonItem?.enabled = !editing
     }
       // MARK: AddItemViewControllerProtocol
 
@@ -43,7 +46,6 @@ class ToDoListViewController: UIViewController, UITableViewDataSource, AddItemVi
         self.items.insertObject(item, atIndex: 0)
 
         // Modify the tableview/listview to display this new item
-
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         self.tableView?.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
       }
@@ -52,9 +54,10 @@ class ToDoListViewController: UIViewController, UITableViewDataSource, AddItemVi
 
       // MARK: - UITableViewDataSource
 
-
-
       func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("first TableView")
+        print("self.items.count")
+        print(self.items.count)
         return self.items.count
       }
 
@@ -68,6 +71,13 @@ class ToDoListViewController: UIViewController, UITableViewDataSource, AddItemVi
         cell.textLabel?.text = item
         print(cell)
         return cell
+      }
+
+      func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+          self.items.removeObjectAtIndex(indexPath.row)
+          self.tableView?.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+        }
       }
 
 

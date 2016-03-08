@@ -36,12 +36,13 @@ protocol AddItemViewControllerProtocol {
         // MARK: UITextFieldDelegate
              func textFieldShouldReturn(textField: UITextField)-> Bool{
                 print("textFieldShouldReturn() ->")
-                if let delegate = self.delegate, let item = textField.text where textField.text?.characters.count > 0 {
-                  print("textfield return protocol start")
-                  delegate.addItem(item)
-                  print("delegate return protocol end")
+                self.dismissViewControllerAnimated(true) { () -> Void in
+                  if let delegate = self.delegate, let item = textField.text where textField.text?.characters.count > 0 {
+                    print("textfield return protocol start")
+                    delegate.addItem(item)
+                    print("delegate return protocol end")
+                  }
                 }
-                self.dismissViewControllerAnimated(true, completion:nil)
                 return true
     }
 
